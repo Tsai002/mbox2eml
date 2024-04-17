@@ -7,7 +7,10 @@ struct Config {
 }
 
 fn main() {
-    let config_path = "config.toml";
+    let config_path = std::env::args()
+        .nth(1)
+        .unwrap_or_else(|| "config.toml".to_string());
+        
     let config: Config = {
         let config_str = fs::read_to_string(config_path).unwrap();
         basic_toml::from_str(&config_str).unwrap()
