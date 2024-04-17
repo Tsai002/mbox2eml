@@ -41,7 +41,7 @@ jobs:
           # (optional) On which platform to distribute the `.zip` file.
           # [default value: windows]
           # [possible values: all, unix, windows, none]
-          zip: none
+          zip: all
           # (required) GitHub token for uploading assets to GitHub Releases.
           archive: $bin-$tag-$target
           token: ${{ secrets.GITHUB_TOKEN }}
