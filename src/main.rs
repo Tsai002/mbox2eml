@@ -47,7 +47,7 @@ fn main() {
                 let msg = e.message().unwrap();
                 let msg = String::from_utf8_lossy(msg);
                 let file_path = save_path.join(format!("{}.eml", i));
-                println!("total: {count}  {}", file_path.display());
+                println!("  total: {count} {}", file_path.display());
                 fs::write(file_path, msg.as_bytes()).unwrap();
             }
         }
